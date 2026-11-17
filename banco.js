@@ -467,6 +467,8 @@
   function mostrarLogin(msg) {
     injetarCss();
     var el = document.getElementById("dg-login");
+    // a tela de "Abrindo o sistema…" usa o mesmo lugar: troca pelo formulário
+    if (el && !el.querySelector("#dg-u")) { el.remove(); el = null; }
     if (!el) {
       el = document.createElement("div");
       el.id = "dg-login";
